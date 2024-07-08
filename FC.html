@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRIENDSHIP CALCULATOR</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body style="background-color: pink;
+font-family: poppins;">
+
+
+
+  <div class="container" style="position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+    width: 60vw;
+    box-shadow: inset -8px -8px 12px rgb(185,103, 117),
+                 inset 8px 8px 12px rgb(201, 95,114)  ;
+                 border-radius: 50px;
+    ">
+
+
+    <div class="content" style="top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%);">
+
+
+      <h1 style="color: rgb(197, 42, 94); text-align: center;">
+        FRIENDSHIP CALCULATOR
+      </h1>
+
+
+      <DIV class="box" style="display: flex;">
+
+
+        <input type="text" placeholder=" your name" id="Nameone" onfocus="this.value" style="height: 30px;width: 200px;
+        text-align: center; margin: 5px; outline: none; border: 2px solid rgb(188, 34, 86);
+        padding: 20px 40px; font-size: 20px;">
+
+
+        <input type="text" placeholder="your friend " id="Nametwo" onfocus="this.value" style="height: 30px;width: 200px;
+        text-align: center; margin: 5px; outline: none; border: 2px solid rgb(188, 34, 86);
+        padding: 20px 40px; font-size: 20px;">
+
+      </DIV>
+      <a href="#" onclick="friend()"   style="display: flex;
+         justify-content: center;
+         text-decoration: none;
+         background-color: rgb(207, 37, 94);
+         padding: 10px;
+         margin: 0px 6px;
+         color: white;
+         text-transform: uppercase;
+         font-size: 20px;
+         font-weight: bold;   ">calculate</a>
+
+
+
+      <p  id="print"   style="display: flex;
+              justify-content: center;
+              background-color: rgb(203, 38, 93);
+              margin: 20px;
+              padding: 20px 50px;
+              color: white;
+              text-transform: uppercase;
+              font-size: 20px;
+              text-align: center;">your friendship result is here </p>
+
+              
+      <p id="statement"  style="display: flex;
+                justify-content: center; 
+                margin-top: 50px;
+                text-transform: uppercase;"></p>
+
+    </div>
+  </div>
+  <script>
+   
+   function friend(){
+    
+    var name1 = document.getElementById("Nameone").value;
+    var name2 = document.getElementById("Nametwo").value;
+   
+    if(name1.length<=3){
+      alert("Enter at least 4 character");
+    }
+    
+    if(name2.length<=3){
+      alert("Enter at least 4 character");
+    }
+    else{
+      var random = Math.floor(Math.random()*100);
+      document.getElementById("print").innerHTML = name1 + "and" + name2 + "=" + random + "%" + " of friend " ;
+
+    }
+    if(random<=10 || random<=70){
+      document.getElementById("statement").innerHTML = "good frienship";
+
+    }
+    else if(random<=71 || random<=100){
+      document.getElementById("statement").innerHTML = "best friends";
+    }
+    
+  }
+  </script>
+
+</body>
+
+</html>
